@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ONG - Superaçãp</title>
+  <title>ONG - Superação</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -15,10 +15,11 @@
           </div>
       
           <nav class="menu">
-            <a href="#">Início</a>
-            <a href="#">Quem Somos?</a>
-            <a href="#">Serviços</a>
-            <a href="#">Doações</a>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Quem Somos?</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#doacao">Doações</a>
+            <a href="#transparencia">Transparência</a>
             <a href="#">Seja Voluntário</a>
           </nav>
         </div>
@@ -28,7 +29,7 @@
           <a href="#"><i class="fab fa-whatsapp"></i></a>
         </div>
       </header>
-      <section class="carousel">
+      <section class="carousel" id="inicio">
         <div class="slides"  id="carouselSlides">
           <img src="assets/img/logo.jpeg" alt="Banner 1" />
           <img src="assets/img/amigos-4.jpg" alt="Banner 2" />
@@ -38,7 +39,7 @@
         <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="next" onclick="moveSlide(1)">&#10095;</button> 
       </section>
-      <section class="sobre">
+      <section class="sobre" id="sobre">
         <div class="texto">
           <h2>Quem Somos?</h2>
           <p>
@@ -54,7 +55,7 @@
           <img src="assets/img/image 4.png" alt="Fachada da ONG Superação">
         </div>
       </section>
-      <section class="carousel-cards">
+      <section class="carousel-cards" id="servicos">
         <button class="card-btn prev" onclick="scrollCards(-1)">&#10094;</button>
       
         <div class="card-container" id="cardContainer">
@@ -98,7 +99,7 @@
         <button class="card-btn next" onclick="scrollCards(1)">&#10095;</button>
       </section>
       
-      <section class="doacoes">
+      <section class="doacoes" id="doacao">
         <div class="qr-code">
           <img src="assets/img/qrcode-pix (1) 1.png" alt="QR Code para doações">
         </div>
@@ -119,7 +120,7 @@
         </div>
       </section>
 
-      <section class="transparencia">
+      <section class="transparencia" id="transparencia"> 
         <h2>Transparência Institucional</h2>
       
         <div class="transparencia-conteudo">
@@ -172,9 +173,30 @@
           <p>© 2025 Todos os Direitos Reservados - ONG superação</p>
         </div>
       </footer>
+
+      <div class="floating-menu">
+        <button class="menu-toggle" onclick="toggleFloatingMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="menu-options" id="floatingOptions">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre">Quem Somos?</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#doacao">Doações</a>
+          <a href="#transparencia">Transparência</a>
+          <a href="#">Seja Voluntário</a>
+        </div>
+      </div>
       
       
 </body>
+<script>
+    function toggleFloatingMenu() {
+      const menu = document.getElementById("floatingOptions");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+  
 <script src="assets/js/carousel.js"></script>
 <script src="assets/js/carouselCards.js"></script>
 </html>

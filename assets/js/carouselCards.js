@@ -1,29 +1,49 @@
 let currentCard = 0;
 
 function scrollCards(direction) {
-  const container = document.getElementById('cardContainer');
-  const cards = container.querySelectorAll('.card');
-
-  const cardWidth = cards[0].offsetWidth + 40; // largura + gap
-  const visibleArea = container.offsetWidth;
-  const visibleCards = Math.floor(visibleArea / cardWidth);
-  const maxIndex = cards.length - visibleCards;
+  const container = document.getElementById("cardContainer");
+  const cards = container.querySelectorAll(".card");
 
   currentCard += direction;
+
   if (currentCard < 0) currentCard = 0;
-  if (currentCard > maxIndex) currentCard = maxIndex;
+  if (currentCard >= cards.length) currentCard = cards.length - 1;
 
-  // 🔥 Correção: calcula deslocamento para centralizar o card ativo
+  // Mover a faixa para posicionar o card ativo no centro
+  const cardWidth = cards[0].offsetWidth + 40; // card + gap
   const centerOffset = (container.parentElement.offsetWidth - cardWidth) / 2;
-  const offset = currentCard * cardWidth - centerOffset;
+  const offset = currentCard * cardWidth;
 
-  container.style.transform = `translateX(-${offset}px)`;
+  container.style.transform = `translateX(${-offset + centerOffset}px)`;
 
-  // ✨ Limpa classes antigas
-  cards.forEach(card => card.classList.remove('active', 'left', 'right'));
+  // Limpa classes
+  cards.forEach(card => card.classList.remove("active", "left", "right"));
 
-  // ✨ Aplica destaque ao atual e vizinhos
-  if (cards[currentCard]) cards[currentCard].classList.add('active');
-  if (cards[currentCard - 1]) cards[currentCard - 1].classList.add('left');
-  if (cards[currentCard + 1]) cards[currentCard + 1].classList.add('right');
+  // Adiciona destaque
+  cards.forEach((card, index) => {
+    if (index === currentCard) {
+      card.classList.add("active");
+    } else if (index < currentCard) {
+      card.classList.add("left");
+    } else {
+      card.classList.add("right");
+    }
+  });
 }
+
+// Centralizar o primeiro card ao carregar
+document.addEventListener("DOMContentLoaded", () => {
+  scrollCards(0);
+
+  // Autoplay: muda de card a cada 4 segundos
+  setInterval(() => {
+    const cards = document.querySelectorAll(".card");
+
+    // Se chegou no último, volta ao início
+    if (currentCard >= cards.length - 1) {
+      currentCard = -1; // vai para 0 no próximo scrollCards(1)
+    }
+
+    scrollCards(1);
+  }, 4000);
+});

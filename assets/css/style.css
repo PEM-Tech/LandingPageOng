@@ -1,6 +1,10 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+     overflow-x: hidden;
   }
   
   /* Header  */
@@ -153,32 +157,40 @@ body {
 
   .carousel-cards {
     position: relative;
-    background: white;
-    padding: 60px 0;
+    width: 100%;
     overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .card-container {
     display: flex;
     gap: 40px;
     transition: transform 0.5s ease;
-    padding: 0 15%; /* mostra parte dos vizinhos */
+    align-items: center;
+    padding: 0 15vw; /* garante espaço visual nas laterais */
   }
   
   .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
     flex: 0 0 300px;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    text-align: center;
     min-height: 400px;
-  
-    /* Efeitos de destaque padrão (modificável via JS) */
-    opacity: 0.5;
-    transform: scale(0.95);
     transition: all 0.4s ease;
+    opacity: 0.4;
+    transform: scale(0.9);
   }
+  
   
   .card.active {
     opacity: 1;
@@ -189,7 +201,7 @@ body {
   .card.left,
   .card.right {
     opacity: 0.7;
-    transform: scale(0.98);
+    transform: scale(0.95);
     z-index: 1;
   }
   
@@ -215,13 +227,13 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border: none;
     color: white;
     font-size: 24px;
     padding: 12px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
   }
   
   .card-btn.prev {
@@ -231,7 +243,6 @@ body {
   .card-btn.next {
     right: 10px;
   }
-  
   
   
   /* doações  */
@@ -371,5 +382,272 @@ body {
     margin-top: 30px;
     font-weight: bold;
     font-size: 13px;
+  }
+
+  /* menu flutuante */
+
+  .floating-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+  
+  .menu-toggle {
+    background-color: #0057ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .menu-options {
+    display: none;
+    position: absolute;
+    bottom: 60px; /* espaço entre botão e menu */
+    right: 0;
+    flex-direction: column;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+  
+  
+  .menu-options a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    font-weight: bold;
+    transition: background 0.3s;
+    display: block;
+  }
+  .menu-options a:hover {
+    background-color: #333;
+  }
+  
+  
+  @media (max-width: 1024px) {
+    .card-container {
+      padding: 0 5vw;
+    }
+  
+    .footer-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .doacoes {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .doacoes .info-doacao {
+      padding-left: 0;
+      text-align: center;
+    }
+  
+    .sobre {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .transparencia-conteudo {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .footer-top {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+  
+    .footer-info {
+      gap: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .slides {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+    .slides img {
+      scroll-snap-align: center;
+    }  
+    .carousel button {
+      display: none; /* esconde os botões no mobile */
+    }
+    .navbar {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 10px;
+    }
+    .logo img {
+      height: 40px;
+    }
+  
+    .menu {
+      display: none; /* Esconde o menu no mobile */
+    }
+  
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 15px;
+    }
+    .social {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    .carousel {
+      height: 250px;
+    }
+    .carousel-cards {
+      padding: 40px 0;
+      overflow-x: auto;
+    }
+    .card-container {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 20px;
+      gap: 16px;
+      transform: none !important;
+    }
+  
+    .card {
+      flex: 0 0 80%; /* ocupa 80% da largura da tela */
+      scroll-snap-align: center;
+      opacity: 1 !important;
+      transform: scale(1) !important;
+      min-width: auto;
+    }
+  
+  
+    .card-btn {
+      display: none;
+    }
+    .sobre,
+    .doacoes,
+    .transparencia {
+      padding: 40px 5%;
+    }
+  
+    .doacoes .qr-code,
+    .sobre .imagem {
+      margin-bottom: 20px;
+    }
+  
+    .footer-logo img {
+      width: 50px;
+    }
+  
+    .footer-social a {
+      font-size: 18px;
+    }
+  
+    .footer-bottom {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      flex: 0 0 220px;
+      min-height: 320px;
+    }
+  
+    .card-container {
+      gap: 15px;
+    }
+  
+    .card h3 {
+      font-size: 16px;
+    }
+  
+    .card p {
+      font-size: 13px;
+    }
+  
+    .doacoes .info-doacao p,
+    .sobre .texto p {
+      font-size: 14px;
+    }
+  
+    .transparencia-conteudo h3 {
+      font-size: 16px;
+    }
+  
+    .footer-info div h4 {
+      font-size: 14px;
+    }
+  
+    .footer-info div p {
+      font-size: 13px;
+    }
+  }
+  @media (max-width: 600px) {
+    .footer {
+      text-align: center;
+      padding: 30px 5% 20px;
+    }
+  
+    .footer-top {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .footer-info {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .footer-info div {
+      width: 100%;
+    }
+  
+    .footer-info div h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+  
+    .footer-info div p {
+      font-size: 13px;
+    }
+  
+    .footer-social {
+      justify-content: center;
+    }
+  
+    .footer-bottom {
+      font-size: 12px;
+      padding-top: 10px;
+    }
+  
+    .floating-menu {
+      bottom: 80px; /* sobe um pouco o botão no mobile */
+    }
   }
   
