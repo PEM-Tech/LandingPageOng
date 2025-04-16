@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ONG - Superaçãp</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+    <header class="navbar">
+        <div class="left">
+          <div class="logo">
+            <img src="assets/img/logo.jpeg" alt="Logo da ONG">
+          </div>
+      
+          <nav class="menu">
+            <a href="#">Início</a>
+            <a href="#">Quem Somos?</a>
+            <a href="#">Serviços</a>
+            <a href="#">Doações</a>
+            <a href="#">Seja Voluntário</a>
+          </nav>
+        </div>
+      
+        <div class="social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </header>
+      <section class="carousel">
+        <div class="slides"  id="carouselSlides">
+          <img src="assets/img/logo.jpeg" alt="Banner 1" />
+          <img src="assets/img/amigos-4.jpg" alt="Banner 2" />
+          <img src="assets/img/My_Instagram_QR_Code.png" alt="Banner 3" />
+        </div>
+          <!-- Botões de navegação -->
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button> 
+      </section>
+      <section class="sobre">
+        <div class="texto">
+          <h2>Quem Somos?</h2>
+          <p>
+            Lorem ipsum eleifend nisl fermentum imperdiet pharetra urna eros curae interdum dapibus metus donec mattis, 
+            himenaeos lobortis vulputate dictumst primis lobortis vestibulum urna feugiat tortor vel feugiat. 
+            Ipsum nulla aliquam tempus congue dolor ipsum eros erat proin etiam, inceptos venenatis massa 
+            himenaeos etiam nisi tellus. Maecenas est curabitur blandit, ut praesent ultrices integer bibendum 
+            a massa ligula molestie. Eu nibh sed condimentum diam vitae ut dictumst phasellus, sagittis bibendum 
+            maecenas commodo nam bibendum ut volutpat mi, sed etiam faucibus mollis velit iaculis dui.
+          </p>
+        </div>
+        <div class="imagem">
+          <img src="assets/img/image 4.png" alt="Fachada da ONG Superação">
+        </div>
+      </section>
+      <section class="carousel-cards">
+        <button class="card-btn prev" onclick="scrollCards(-1)">&#10094;</button>
+      
+        <div class="card-container" id="cardContainer">
+          <div class="card">
+            <img src="assets/img/carouselCards/ChatGPT Image 1 de abr. de 2025, 13_31_03 1.png" alt="Imagem 1">
+            <h3>Fonoaudiologia</h3>
+            <p>Lorem ipsum hac aenean platea pulvinar curabitur, sapien elit ligula amet arcu rhoncus.</p>
+          </div>
+          <div class="card">
+            <img src="assets/img/carouselCards/image 7.png" alt="Imagem 2">
+            <h3>Musicoterapia</h3>
+            <p>Aenean est primis blandit laoreet ut luctus hac egestas turpis vestibulum.</p>
+          </div>
+          <div class="card">
+            <img src="assets/img/carouselCards/ChatGPT Image 1 de abr. de 2025, 13_52_06 1.png" alt="Imagem 3">
+            <h3>Atividades aquáticas:</h3>
+            <p>Convallis praesent accumsan convallis malesuada congue ultrices etiam.</p>
+          </div>
+          <div class="card">
+            <img src="assets/img/carouselCards/ChatGPT Image 1 de abr. de 2025, 13_33_04 1.png" alt="Imagem 4">
+            <h3>Odontologia:</h3>
+            <p>Convallis praesent accumsan convallis malesuada congue ultrices etiam.</p>
+          </div>
+          <div class="card">
+            <img src="assets/img/carouselCards/ChatGPT Image 1 de abr. de 2025, 13_38_42 1.png" alt="Imagem 5">
+            <h3>Psicopedagogia:</h3>
+            <p>Convallis praesent accumsan convallis malesuada congue ultrices etiam.</p>
+          </div>
+          <div class="card">
+            <img src="assets/img/carouselCards/ChatGPT Image 1 de abr. de 2025, 13_38_44 1.png" alt="Imagem 6">
+            <h3>Nutricionista:</h3>
+            <p>Convallis praesent accumsan convallis malesuada congue ultrices etiam.</p>
+          </div>
+          <div class="card">
+            <img src="assets/img/carouselCards/ChatGPT Image 1 de abr. de 2025, 13_59_40 1.png" alt="Imagem 7">
+            <h3>Oficinas e rodas de conversas:</h3>
+            <p>Convallis praesent accumsan convallis malesuada congue ultrices etiam.</p>
+          </div>
+        </div>
+      
+        <button class="card-btn next" onclick="scrollCards(1)">&#10095;</button>
+      </section>
+      
+      <section class="doacoes">
+        <div class="qr-code">
+          <img src="assets/img/qrcode-pix (1) 1.png" alt="QR Code para doações">
+        </div>
+        <div class="info-doacao">
+          <h2>Doações</h2>
+          <p>
+            Lorem ipsum hac aenean platea pulvinar curabitur, sapien elit ligula amet arcu rhoncus, 
+            elit malesuada congue ultrices etiam. Aenean est primis blandit laoreet ut luctus hac egestas 
+            turpis vestibulum cubilia malesuada convallis, praesent accumsan.
+          </p>
+          <p><strong>Pix:</strong> 12.345.678/0001-90</p>
+          <p><strong>Banco:</strong> Banco do Brasil</p>
+          <p><strong>Para Depósitos:</strong><br>
+            CNPJ: 12.345.678/0001-90<br>
+            Agência: 1234-5<br>
+            Conta: 67890-1
+          </p>
+        </div>
+      </section>
+
+      <section class="transparencia">
+        <h2>Transparência Institucional</h2>
+      
+        <div class="transparencia-conteudo">
+          <div class="dados-instituicao">
+            <h3>Dados da Instituição</h3>
+            <p>Razão Social: ONG SUPERAÇÃO</p>
+            <p>CNPJ nº: 12.345.678/0001-90</p>
+            <p>Endereço: Estr. do Dendê - Tauá, Rio de Janeiro - RJ, 21920-000</p>
+          </div>
+      
+          <div class="dados-diretoria">
+            <h3>Diretoria:</h3>
+            <p>Presidente – Marcia</p>
+            <p>Diretoria Executiva – Alguem</p>
+            <p>Vigência desta Diretoria: 02/05/2019 a 02/05/2023</p>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img src="assets/img/logo.jpeg" alt="Logo ONG Superação">
+          </div>
+      
+          <div class="footer-info">
+            <div>
+              <h4>Endereço</h4>
+              <p>Estrada do Dendê, 563 - Tauá<br>Rio de Janeiro - RJ - CEP: 21920-000</p>
+            </div>
+      
+            <div>
+              <h4>Atendimento</h4>
+              <p>Seg à Sex<br>9h às 17h</p>
+            </div>
+      
+            <div>
+              <h4>Contato</h4>
+              <p>(21) 99881-7236<br>email@gmail.com</p>
+            </div>
+          </div>
+      
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>© 2025 Todos os Direitos Reservados - ONG superação</p>
+        </div>
+      </footer>
+      
+      
+</body>
+<script src="assets/js/carousel.js"></script>
+<script src="assets/js/carouselCards.js"></script>
+</html>
